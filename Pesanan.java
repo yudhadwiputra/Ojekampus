@@ -1,33 +1,58 @@
-
 /**
  * Write a description of class Pesanan here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yudha Dwi Putra 
+ * @version 25/2/17
  */
 public class Pesanan
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Pesanan
-     */
-    public Pesanan()
-    {
-        // initialise instance variables
-        x = 0;
+    private String pelayan;
+    private String pengguna;
+    private String pelanggan_awal;
+    private String pelanggan_akhir;
+    private double biaya;
+    private String layanan;
+    private String lokasi_awal;
+    private String lokasi_akhir;
+    private boolean diproses;
+    private boolean dibatalkan;
+    public Pesanan(){
+    
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public boolean getStatusPesanan(){
+        return false;
+    }
+    public void pesananDiambil(String ojek) {
+    
+    }
+    public String getPelanggan() {
+        return null;
+    }
+    public String getOjek() {
+        return null;
+    }
+    public void pesananDibatalkan() {
+    
+    }
+    public String getLokasiAwal() {
+        return null;
+    }
+    public String getLokasiAkhir() {
+        return null;
+    }
+    public String getTipeLayanan() {
+        return null;
+    }
+    public String getPenggunaAwal() {
+        return null;
+    }
+    public String getPenggunaAkhir() {
+        return null;
+    }
+    public double getBiaya(){
+        return 0;
+    }
+    public String toString() {
+        return null;
     }
 }

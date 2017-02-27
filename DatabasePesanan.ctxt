@@ -1,8 +1,16 @@
 #BlueJ class context
-comment0.params=
-comment0.target=DatabasePesanan()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabasePesanan\r\n
-comment1.params=y
-comment1.target=int\ sampleMethod(int)
-comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
-numComments=2
+comment0.params=pesan
+comment0.target=boolean\ addPesanan(java.lang.String)
+comment1.params=pesan
+comment1.target=boolean\ hapusPesanan(java.lang.String)
+comment2.params=pengguna
+comment2.target=boolean\ hapusPesanann(java.lang.String)
+comment3.params=pengguna
+comment3.target=java.lang.String\ getPesanan(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String[]\ getDatabase()
+comment5.params=pesan
+comment5.target=void\ pesananDibatalkan(java.lang.String)
+comment6.params=pengguna
+comment6.target=void\ pesananBatalkan(java.lang.String)
+numComments=7

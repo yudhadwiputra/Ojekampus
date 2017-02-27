@@ -1,33 +1,31 @@
-
 /**
- * Write a description of class User here.
+ * Abstract class User - write a description of the class here
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yudha Dwi Putra
+ * @version 25/2/17
  */
-public class User
+public abstract class User
 {
     // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class User
-     */
-    public User()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
+    protected int id;
+    protected String nama;
+   
+    public User (int id, String[] nama) {
         // put your code here
-        return x + y;
     }
+    
+    public int getID () {
+    return 0;
+    }
+    
+    public String getNama() {
+    return null;
+    }
+    
+    public void setID (int id) {
+    }
+    
+    public void setNama (String nama) {
+    }
+    
 }
