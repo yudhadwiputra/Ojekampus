@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=id\ nama\ posisi_sekarang
+comment0.target=Ojek(int,\ java.lang.String,\ Lokasi)
+comment1.params=
+comment1.target=void\ printData()
+comment10.params=
+comment10.target=Lokasi\ getPosisi()
+comment11.params=
+comment11.target=java.lang.String\ getStatus()
+comment2.params=id
+comment2.target=void\ setID(int)
+comment3.params=nama
+comment3.target=void\ setNama(java.lang.String)
+comment4.params=pesan
+comment4.target=void\ setPesanan(Pesanan)
+comment5.params=sekarang
+comment5.target=void\ setPosisi(Lokasi)
+comment6.params=status
+comment6.target=void\ setStatus(java.lang.String)
+comment7.params=
+comment7.target=int\ getID()
+comment8.params=
+comment8.target=java.lang.String\ getNama()
+comment9.params=
+comment9.target=Pesanan\ getPesanan()
+numComments=12

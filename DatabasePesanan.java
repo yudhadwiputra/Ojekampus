@@ -1,31 +1,31 @@
 /**
  * Write a description of class DatabasePesanan here.
- * 
+ * Kelas DatabasePesanan merupakan kelas dimana berisi detail tentang 
+ * list dari seluruh pesanan dimana bisa dilakukan untuk menambah pesanan
+ * atau menghapus pesanan
  * @author Yudha Dwi Putra
- * @version 25/2/17
+ * @version 04/03/2017
  */
 public class DatabasePesanan
 {
-    private String[] listPesanan;
-    public boolean addPesanan(String pesan) {
-        return false;
-    }
-    public static boolean hapusPesanan(String pesan) {
-        return false;
-    }
-    public static boolean hapusPesanann(String pengguna) {
-        return false;
-    }
-    public static String getPesanan(String pengguna) {
-        return null;
-    }
-    public static String[] getDatabase() {
-        return null;
-    }
-    public static void pesananDibatalkan(String pesan) {
-        
-    }
-    public static void pesananBatalkan(String pengguna) {
+    private static Pesanan list_pesanan;
     
+    public static boolean addPesanan(Pesanan pesan) 
+    {
+        list_pesanan = pesan;
+        System.out.println("Pesanan Berhasil Dilakukan");
+        return true;
     }
+    
+    public static boolean hapusPesanan(Pesanan pesan) 
+    {
+        list_pesanan = null;
+        return true;
+    }
+    
+    public static Pesanan getPesanan() 
+    {
+        return list_pesanan;
+    }
+    
 }

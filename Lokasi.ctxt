@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=nama_lokasi\ x\ y\ keterangan_lokasi
+comment0.target=Lokasi(java.lang.String,\ double,\ double,\ java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment2.params=
+comment2.target=double\ getX()
+comment3.params=
+comment3.target=double\ getY()
+comment4.params=
+comment4.target=java.lang.String\ getNama()
+comment5.params=
+comment5.target=java.lang.String\ getKeteranganLokasi()
+comment6.params=x
+comment6.target=void\ setX(double)
+comment7.params=y
+comment7.target=void\ setY(double)
+comment8.params=nama_lokasi
+comment8.target=void\ setNama(java.lang.String)
+comment9.params=keterangan_lokasi
+comment9.target=void\ setKeteranganLokasi(java.lang.String)
+numComments=10

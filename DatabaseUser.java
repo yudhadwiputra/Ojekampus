@@ -1,39 +1,46 @@
 /**
  * Write a description of class DatabaseUser here.
- * 
+ * Kelas DatabaseUser merupakan kelas dimana berisi detail tentang 
+ * list dari seluruh pelayan/pelanggan dimana bisa dilakukan untuk 
+ * menambah pelanggan/pelayan dan menghapus pelanggan/pelayan
  * @author Yudha Dwi Putra
- * @version 25/2/17
+ * @version 04/03/2017
  */
 public class DatabaseUser
 {
-    // instance variables - replace the example below with your own
-    private static String[] pelanggan_database;
-    private static String[] ojek_database;
-    private static int id_ojek_terakhir;
-    private static int id_pelanggan_terakhir;
+    /*
+    Lokasi Penulisan
+    Instance Variable
+    */
+    private static Pelanggan pelanggan_database;
+    private static Ojek ojek_database;
+    private static int id_ojek_terakhir = 1;
+    private static int id_pelanggan_terakhir = 1;
 
-    /**
-     * Constructor for objects of class DatabaseUser
-     */
-    public static boolean addPelanggan (String baru)
+    public static boolean addPelanggan (Pelanggan baru)
     {
-        // initialise instance variables
-        return false;
+        pelanggan_database = baru;
+        System.out.println("Pelanggan Berhasil Ditambahkan");
+        return true;
     }
 
     public static boolean removePelanggan (int id)
     {
-        return false;
+        pelanggan_database = null;
+        return true;
     }
     
-    public static boolean addOjek (String baru)
+    public static boolean addOjek (Ojek baru)
     {
-        return false;
+        ojek_database = baru;
+        System.out.println("Ojek Berhasil Ditambahkan");
+        return true;
     }
    
     public static boolean removeOjek (int id)
     {
-        return false;
+        ojek_database = null;
+        return true;
     }
     
     public static int getIDOjekTerakhir ()
@@ -46,23 +53,14 @@ public class DatabaseUser
         return 0;
     }
     
-    public static String getUserOjek (int id)
+    public static Ojek getUserOjek ()
     {
-        return null;
+        return ojek_database;
     }
     
-    public static String[] getOjekDatabase ()
+    public static Pelanggan getUserPelanggan (int id)
     {
-        return null;
+        return pelanggan_database;
     }
-    
-    public static String getUserPelanggan (int id)
-    {
-        return null;
-    }
-    
-    public static String[] getPelangganDatabase ()
-    {
-        return null;
-    }
+
 }
