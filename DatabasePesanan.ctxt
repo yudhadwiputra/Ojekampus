@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=pesan
 comment0.target=boolean\ addPesanan(Pesanan)
+comment0.text=\r\n\ addPesanan.\ \r\n\ Metode\ untuk\ menambahkan\ pesanan\ pada\ database\ serta\ memberi\ tahu\ terdapat\ penambahan\ pesanan\ dalam\ database.\r\n\ @param\ Pesanan\ pesan\ \ \ \ data\ pesanan\ yang\ akan\ ditambahkan\ dalam\ database.\r\n\ @return\ true\ \ \ menandakan\ penambahan\ pesanan\ berhasil\ dilakukan.\r\n
 comment1.params=pesan
 comment1.target=boolean\ hapusPesanan(Pesanan)
+comment1.text=\r\n\ hapusPesanan.\ \r\n\ Metode\ untuk\ menghapus\ pesanan\ dari\ database\ serta\ memberi\ tahu\ terdapat\ penghapusan\ pesanan\ dalam\ database.\r\n\ @param\ Pesanan\ pesan\ \ \ \ data\ pesanan\ yang\ akan\ dihapus\ dalam\ database.\r\n\ @return\ true\ \ \ menandakan\ penghapusan\ pesanan\ berhasil\ dilakukan.\r\n
 comment2.params=
 comment2.target=Pesanan\ getPesanan()
+comment2.text=\r\n\ getPesanan.\ \r\n\ Metode\ yang\ akan\ mengembalikan\ data\ pesanan\ yang\ terakhir\ dimasukkan\ ke\ database\ ketika\ dipanggil.\r\n\ @return\ Pesanan\ list_pesanan\ \ \ data\ pesanan\ yang\ terakhir\ dimasukkan\ ke\ database.\r\n
 numComments=3

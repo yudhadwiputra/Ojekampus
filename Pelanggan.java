@@ -11,12 +11,22 @@ public class Pelanggan
     private String nama;
     private int id;
     
+        /**
+     * Constructor Pelanggan. 
+     * Metode yang pertama kali dipanggil ketika sebuah object dari kelas pelanggan diciptakan.
+     * @param int id    id pelanggan untuk object pelanggan baru.
+     * @param String nama   nama pelanggan untuk object pelanggan baru.
+     */
     public Pelanggan(int id, String nama)
     {
         this.id = id;
         this.nama = nama;
     }
     
+        /**
+     * printData. 
+     * Metode untuk mencetak data pelanggan.
+     */ 
     public void printData()
     {
         System.out.println("Pelanggan");
@@ -24,21 +34,41 @@ public class Pelanggan
         System.out.println("Nama = " + nama);
     }
 
+        /**
+     * getID. 
+     * Metode yang akan mengembalikan nilai id pelanggan ketika dipanggil.
+     * @return int id   nilai id pelanggan.
+     */   
     public int getID()
     {
         return id;
     }
     
+        /**
+     * getNama. 
+     * Metode yang akan mengembalikan nama pelanggan ketika dipanggil.
+     * @return String nama  nama pelanggan.
+     */
     public String getNama()
     {
         return nama;
     }
     
+        /**
+     * setID. 
+     * Metode untuk merubah nilai id pelanggan.
+     * @param int id   nilai id baru pelanggan.
+     */
     public void setID (int id)
     {
         this.id=id;
     }
     
+        /**
+     * setNama. 
+     * Metode untuk merubah nama pelanggan.
+     * @param String nama   nama baru pelanggan.
+     */
     public void setNama (String nama)
     {
         this.nama = nama;
