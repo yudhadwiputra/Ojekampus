@@ -1,15 +1,6 @@
-<<<<<<< HEAD
 #BlueJ class context
 comment0.params=status
 comment0.target=StatusOjek(java.lang.String)
 comment1.params=
 comment1.target=java.lang.String\ status()
 numComments=2
-=======
-#BlueJ class context
-comment0.params=status
-comment0.target=StatusOjek(java.lang.String)
-comment1.params=
-comment1.target=java.lang.String\ status()
-numComments=2
->>>>>>> origin/master
