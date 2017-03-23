@@ -52,6 +52,7 @@ public class OjeKampus
        databaseUser.addPelanggan(pelanggan_putra);
        databasePesanan.addPesanan(pesanan_putra);
        
+       
        System.out.println("\n=== Pesanan Ditugaskan ===");
        administrasi.pesananDitugaskan(pesanan_putra,ojek_yudha);
        databaseUser.getUserOjek().printData();
@@ -86,7 +87,15 @@ public class OjeKampus
        databaseUser.getUserPelanggan().printData();
        databasePesanan.getPesanan().printData();
        
-       ojek_yudha.setDOB(20, 2, 2017);
-       System.out.println("Tanggal Input "+ojek_yudha.getDOB());
+       System.out.println(ojek_yudha.getNama());
+       System.out.println(pelanggan_putra.getNama());
+       ojek_yudha.setNoPlat("B124UA");
+       System.out.println(ojek_yudha.getNoPlat());
+       ojek_yudha.setTelefon("085697041234");
+       System.out.println(ojek_yudha.getTelefon());
+       ojek_yudha.setEmail("yudha@gmail.com");
+       System.out.println(ojek_yudha.getEmail());
+       ojek_yudha.setDOB(04,11,1996);
+       System.out.println("Tanggal Lahir "+ojek_yudha.getDOB().toString());
     }
 }

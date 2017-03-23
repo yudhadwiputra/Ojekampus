@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=nama\ nilai
+comment0.target=Mahasiswa(java.lang.String,\ int)
+comment0.text=\r\n\ Mahasiswa\ Constructor\r\n\r\n\ @param\ nama\ parameter\ untuk\ nama\ dari\ mahasiswa\r\n\ @param\ nilai\ parameter\ untuk\ nilai\ dari\ mahasiswa\r\n
+comment1.params=newNilai
+comment1.target=void\ setNilai(int)
+comment1.text=\r\n\ Method\ setNilai\r\n\r\n\ @param\ newNilai\ parameter\ untuk\ input\ nilai\ baru\r\n
+comment2.params=nama
+comment2.target=void\ setNama(java.lang.String)
+comment2.text=\r\n\ Method\ setNama\r\n\r\n\ @param\ nama\ parameter\ untuk\ input\ nama\ baru\r\n
+comment3.params=
+comment3.target=int\ getNilai()
+comment3.text=\r\n\ Method\ getNilai\r\n\r\n\ @return\ nilai\ yang\ sudah\ diinput\r\n
+comment4.params=
+comment4.target=java.lang.String\ getNama()
+comment4.text=\r\n\ Method\ getNama\r\n\r\n\ @return\ nama\ yang\ sudah\ diinput\r\n
+comment5.params=s
+comment5.target=int\ compareTo(Mahasiswa)
+comment5.text=\r\n\ Method\ compareTo\r\n\ Metode\ untuk\ membandingkan\ mahasiswa\ dengan\ mahasiswa\ lain.\r\n\ fungsi\ bekerja\ dengan\ melakukan\ override\ yang\ akan\ dipanggil\ ketika\ proses\ sorting\ dilakukan\r\n\ @param\ s\ merupakan\ objek\ mahasiswa\ lainnya\r\n\ @return\ hasil\ dari\ perbandingan\ nilai\ dengan\ nilai\ lainnya\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Method\ toString\r\n\r\n\ @return\ method\ yang\ menampilkan\ informasi\ dari\ kelas\ mahasiswa\r\n
+numComments=7

@@ -53,10 +53,19 @@ public class Pelanggan
         return nama;
     }
     
-    public boolean setTelefon (String telefon)
+    public boolean setTelefon(String telefon)
     {
-        this.telefon=telefon;
-        return false;
+        Pattern pattern = Pattern.compile("\\d{10,12}");
+        Matcher matcher = pattern.matcher(telefon);
+        if(matcher.matches())
+        {
+            this.telefon = telefon;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public boolean setEmail (String email)

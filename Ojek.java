@@ -1,6 +1,7 @@
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.Date;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
@@ -126,8 +127,17 @@ public class Ojek
     
     public boolean setTelefon(String telefon)
     {
-        this.telefon = telefon;
-        return true;
+        Pattern pola_telefon = Pattern.compile("\\d{10,12}");
+        Matcher matcher_telefon = pola_telefon.matcher(telefon);    
+        if(matcher_telefon.matches())
+        {
+            this.telefon = telefon;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public boolean setEmail(String email)
@@ -153,8 +163,18 @@ public class Ojek
     
     public boolean setNoPlat(String no_plat)
     {
-        this.no_plat = no_plat;
-        return true;
+        Pattern pola_plat = Pattern.compile("[A-Z]\\d{1,4}[A-Z]{1,3}");
+        Matcher matcher_no_plat = pola_plat.matcher(no_plat);
+        if(matcher_no_plat.matches())
+        {
+            this.no_plat = no_plat;
+            return true; 
+        }    
+        else
+        {
+            return false;
+        }
+
     }
     
        /**
@@ -199,13 +219,13 @@ public class Ojek
     
     public String toString()
     {
-        if(getPesanan()==null)
+        if(pesanan_sekarang.equals(null))
         {
-            return nama+""+id+""+status.toString();
+            return nama + id + status.toString();
         }
         else
         {
-            return nama+""+id+""+status.toString()+""+getNama();
+            return nama + id + status.toString() + DatabaseUser.getUserPelanggan().getNama();
         }
     }
 }
