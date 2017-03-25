@@ -1,19 +1,19 @@
 /**
  * Enumeration class StatusOjek - write a description of the enum class here
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author (Yudha Dwi Putra)
+ * @version (25 Mar 2017)
  */
 public enum StatusOjek
 {
     Idle("Idle"), Jemput("Menjemput"), Antar("Mengantar");
-    private String status;
+    private String deskripsi;
     
     StatusOjek(String status){
-        this.status = status;
+        this.deskripsi = deskripsi;
     }
     
-    public String status(){
-        return status;
+    public String getIDStatus(){
+        return deskripsi;
     }
 }

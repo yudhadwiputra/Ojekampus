@@ -2,8 +2,8 @@
 /**
  * Enumeration class TipeLayanan - write a description of the enum class here
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author (Yudha Dwi Putra)
+ * @version (25 Mar 2017)
  */
 public enum TipeLayanan
 {

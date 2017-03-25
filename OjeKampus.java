@@ -37,65 +37,59 @@ public class OjeKampus
      * Metode utama pada project ojekampus yang akan dialankan ketika project di compile dan di run.
      * @param  String args[]    argumen yang diberikan untuk metode main.
      */
-   public void main(String[] args) //Fungsi utama Program OjeKampus
-   {
-       databaseUser = new DatabaseUser(); //objek
-       databasePesanan = new DatabasePesanan();
-       administrasi = new Administrasi();
-       lokasi_ojek = new Lokasi("UI",14,06,"Depok");
-       ojek_yudha = new Ojek(databaseUser.getIDOjekTerakhir(), "yudha", lokasi_ojek);
-       pelanggan_putra = new Pelanggan(databaseUser.getIDPelangganTerakhir(), "putra");
-       lokasi_putra_awal = new Lokasi("FT",5,3,"Depok");
-       lokasi_putra_akhir = new Lokasi("Ciputat",1,9,"Tangerang Selatan");
-       pesanan_putra = new Pesanan(pelanggan_putra,TipeLayanan.AntarOrang, lokasi_putra_awal, lokasi_putra_akhir, "Jeffry", "Izzan", 10000);
-       databaseUser.addOjek(ojek_yudha);
-       databaseUser.addPelanggan(pelanggan_putra);
-       databasePesanan.addPesanan(pesanan_putra);
-       
-       
-       System.out.println("\n=== Pesanan Ditugaskan ===");
-       administrasi.pesananDitugaskan(pesanan_putra,ojek_yudha);
-       databaseUser.getUserOjek().printData();
-       databaseUser.getUserPelanggan().printData();
-       pesanan_putra.printData();
-
-       System.out.println("\n=== Pesanan Dibatalkan (OJEK) ===");
-       administrasi.pesananDitugaskan(pesanan_putra,ojek_yudha);
-       administrasi.pesananDibatalkan(ojek_yudha);
-       databaseUser.getUserOjek().printData();
-       databaseUser.getUserPelanggan().printData();
-       databasePesanan.getPesanan().printData();
-       
-       System.out.println("\n=== Pesanan Selesai (OJEK) ===");
-       administrasi.pesananDitugaskan(pesanan_putra,ojek_yudha);
-       administrasi.pesananSelesai(ojek_yudha);
-       databaseUser.getUserOjek().printData();
-       databaseUser.getUserPelanggan().printData();
-       databasePesanan.getPesanan().printData();
-       
-       System.out.println("\n=== Pesanan Dibatalkan (PESANAN) ===");
-       administrasi.pesananDitugaskan(pesanan_putra,ojek_yudha);
-       administrasi.pesananDibatalkan(pesanan_putra);
-       databaseUser.getUserOjek().printData();
-       databaseUser.getUserPelanggan().printData();
-       databasePesanan.getPesanan().printData();
-       
-       System.out.println("\n=== Pesanan Selesai (PESANAN) ===");
-       administrasi.pesananDitugaskan(pesanan_putra,ojek_yudha);
-       administrasi.pesananSelesai(pesanan_putra);
-       databaseUser.getUserOjek().printData();
-       databaseUser.getUserPelanggan().printData();
-       databasePesanan.getPesanan().printData();
-       
-       System.out.println(ojek_yudha.getNama());
-       System.out.println(pelanggan_putra.getNama());
-       ojek_yudha.setNoPlat("B124UA");
-       System.out.println(ojek_yudha.getNoPlat());
-       ojek_yudha.setTelefon("085697041234");
-       System.out.println(ojek_yudha.getTelefon());
-       ojek_yudha.setEmail("yudha@gmail.com");
-       System.out.println(ojek_yudha.getEmail());
-       ojek_yudha.setDOB(04,11,1996);
-       System.out.println("Tanggal Lahir "+ojek_yudha.getDOB().toString());
+    public static void main(String args[])
+    {
+        //Modul 5 Tugas 4
+        System.out.println("\n");
+        Lokasi lokasi_ojek1 = new Lokasi("Ciputat",04,12,"Tangerang");
+        Ojek ojek1 = new Ojek(1,"Yudha", lokasi_ojek1);
+        DatabaseUser.addOjek(ojek1);
+        Lokasi lokasi_ojek2 = new Lokasi("Pasar Minggu",56,78,"Jakarta Selatan");
+        Ojek ojek2 = new Ojek(2,"Irfan", lokasi_ojek2);
+        DatabaseUser.addOjek(ojek2);
+        Lokasi lokasi_ojek3 = new Lokasi("Cijantung",67,89,"Jakarta Timur");
+        Ojek ojek3 = new Ojek(3,"Yunus", lokasi_ojek3);
+        DatabaseUser.addOjek(ojek3);
+        Pelanggan pelanggan1 = new Pelanggan(1, "Destian","081234567890");
+        DatabaseUser.addPelanggan(pelanggan1);
+        Pelanggan pelanggan2 = new Pelanggan(2, "Yuda","089876543210");
+        DatabaseUser.addPelanggan(pelanggan2);
+        Pelanggan pelanggan3 = new Pelanggan(3, "Aulya","082345678901");
+        DatabaseUser.addPelanggan(pelanggan3);
+        
+        Lokasi lokasi_awal_pesanan1 = new Lokasi("Margonda",12,34,"Depok");
+        Lokasi lokasi_akhir_pesanan1 = new Lokasi("Juanda",12,45,"Depok");
+        Pesanan pesanan1 = new Pesanan(pelanggan1,TipeLayanan.BeliBarang,lokasi_awal_pesanan1,lokasi_akhir_pesanan1,pelanggan1.getNama());
+        DatabasePesanan.addPesanan(pesanan1);
+        
+        Lokasi lokasi_awal_pesanan2 = new Lokasi("Fatmawati",23,45,"Jakarta Selatan");
+        Lokasi lokasi_akhir_pesanan2 = new Lokasi("Pancoran",23,67,"Jakarta Selatan");
+        Pesanan pesanan2 = new Pesanan(pelanggan2,TipeLayanan.AntarBarang,lokasi_awal_pesanan2,lokasi_akhir_pesanan2,pelanggan2.getNama(), "Irfan");
+        DatabasePesanan.addPesanan(pesanan2);
+        
+        Lokasi lokasi_awal_pesanan3 = new Lokasi("Tanjung Priok",34,56,"Jakarta Utara");
+        Lokasi lokasi_akhir_pesanan3 = new Lokasi("Mangga dua",34,78,"Jakarta Barat");
+        Pesanan pesanan3 = new Pesanan(pelanggan3,TipeLayanan.AntarOrang,lokasi_awal_pesanan3,lokasi_akhir_pesanan3,pelanggan3.getNama());
+        DatabasePesanan.addPesanan(pesanan3);
+        
+        Administrasi.printAllDatabase();
+        Administrasi.jalankanSistemPenugas();
+        Administrasi.jalankanSistemPenugas();
+        Administrasi.jalankanSistemPenugas();
+        System.out.println("\n");
+        Administrasi.printAllDatabase();
+        
+        Administrasi.pesananDibatalkan(pesanan1.getPelanggan());
+        Administrasi.pesananDibatalkan(pesanan2.getPelayan());
+        pesanan3.getPelayan().setStatus(StatusOjek.Antar);
+        System.out.println("\n");
+        Administrasi.printAllDatabase();
+        
+        Administrasi.pesananSelesai(pesanan3.getPelanggan());
+        DatabasePesanan.hapusPesanan(pesanan3.getPelanggan());
+        System.out.println("\n");
+        Administrasi.printAllDatabase();
+        
+        
     }
 }

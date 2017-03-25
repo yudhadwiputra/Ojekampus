@@ -105,7 +105,7 @@ public class Pesanan
      * Metode yang akan mengembalikan data Ojek yang menjalankan pesanan ketika dipanggil.
      * @return Ojek pelayan   data Ojek yang menjalankan pesanan.
      */ 
-    public Ojek getOjek() 
+    public Ojek getPelayan() 
     {
         return pelayan;
     }
@@ -234,7 +234,7 @@ public class Pesanan
             final_status = "KOSONG";
         }
         
-        if (getOjek() == null) {
+        if (getPelayan() == null) {
 
             if (getPenggunaAkhir() != null) {
                 return ("Dibuat oleh " + pengguna.getNama() +
