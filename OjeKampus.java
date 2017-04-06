@@ -15,7 +15,7 @@ public class OjeKampus
    public static DatabaseUser databaseUser;
    public static DatabasePesanan databasePesanan;
    public static Administrasi administrasi;
-   public static Lokasi lokasi_ojek;
+   public static Lokasi ojek_lokasi;
    public static Pelanggan pelanggan_putra;
    public static Lokasi lokasi_putra_awal;
    public static Lokasi lokasi_putra_akhir;
@@ -83,13 +83,16 @@ public class OjeKampus
         Administrasi.pesananDibatalkan(pesanan2.getPelayan());
         pesanan3.getPelayan().setStatus(StatusOjek.Antar);
         System.out.println("\n");
+        DatabasePesanan.hapusPesanan(pesanan1.getPelanggan());
+        DatabasePesanan.hapusPesanan(pesanan2.getPelanggan());
         Administrasi.printAllDatabase();
         
         Administrasi.pesananSelesai(pesanan3.getPelanggan());
-        DatabasePesanan.hapusPesanan(pesanan3.getPelanggan());
         System.out.println("\n");
         Administrasi.printAllDatabase();
+        DatabasePesanan.hapusPesanan(pesanan3.getPelanggan());
         
-        
+        System.out.println("\n");
+        Administrasi.printAllDatabase();
     }
 }

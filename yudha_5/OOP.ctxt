@@ -4,5 +4,5 @@ comment0.target=OOP()
 comment0.text=\r\n\ OOP\ Constructor\r\n\ Merupakan\ method\ yang\ pertama\ kali\ di\ panggil\ ketika\ sebuah\ object\ OOP\ diciptakan.\r\n\ Method\ ini\ akan\ meminta\ input\ yang\ akan\ disimpan\ pada\ array\ list\ dari\ object.\r\n
 comment1.params=
 comment1.target=void\ main()
-comment1.text=\r\n\ Method\ main\r\n\ Method\ utam\ yang\ akan\ dipanggil\ ketika\ program\ di\ compile.\r\n\ program\ akan\ membuat\ sebuah\ object\ OOP\ yang\ akan\ meminta\ input\ pada\ array\ dari\ object\r\n\ dan\ melakukan\ sorting\ pada\ array\ tersebut.\r\n
+comment1.text=\r\n\ Method\ main\r\n\ Method\ utama\ yang\ akan\ dipanggil\ ketika\ program\ di\ compile.\r\n\ program\ akan\ membuat\ sebuah\ object\ OOP\ yang\ akan\ meminta\ input\ pada\ array\ dari\ object\r\n\ dan\ melakukan\ sorting\ pada\ array\ tersebut.\r\n
 numComments=2

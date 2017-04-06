@@ -15,8 +15,7 @@ public class Pelanggan
     private int id;
     private String nama,telefon,email;
     private Date dob;
-    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-    public static final Pattern VALID_PHONE_NUM_ID = Pattern.compile("^08[0-9]{9,}$");
+    
     /**
      * Constructor Pelanggan. 
      * Metode yang pertama kali dipanggil ketika sebuah object dari kelas pelanggan diciptakan.
@@ -97,29 +96,32 @@ public class Pelanggan
         this.dob = dob;
     }
    
-    public void setTelefon(String telefon){
-        if(tlp_validate(telefon)){
+    public boolean setTelefon(String telefon){
+        Pattern pattern = Pattern.compile("\\d{10,12}");
+        Matcher matcher = pattern.matcher(telefon);
+        if(matcher.matches())
+        {
             this.telefon = telefon;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
     
-    public void setEmail(String email){
-        if(validate(email)){
-            this.email = email;
+    public boolean setEmail(String email){
+        Pattern pattern = Pattern.compile("(.)+(@)(.)+\\.(.)+");
+        Matcher matcher = pattern.matcher(email);
+        this.email=email;
+        if(matcher.matches())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
-   
-    
-
-    public static boolean validate(String emailStr) {
-        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(emailStr);
-        return matcher.find();
-    }
-
-    public static boolean tlp_validate(String telefon) {
-        Matcher matcher = VALID_PHONE_NUM_ID.matcher(telefon);
-        return matcher.find();
-    }
-    
 
 }

@@ -9,7 +9,7 @@ public enum StatusOjek
     Idle("Idle"), Jemput("Menjemput"), Antar("Mengantar");
     private String deskripsi;
     
-    StatusOjek(String status){
+    StatusOjek(String deskripsi){
         this.deskripsi = deskripsi;
     }
     
