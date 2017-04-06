@@ -1,3 +1,4 @@
+package modul6;
 /**
  * Write a description of class Entity here.
  * 
@@ -17,7 +18,7 @@ public abstract class Entity implements Wear
     protected double armorDef;
     protected double attack;
     protected double defense;
-    protected boolean dead;
+    protected boolean dead = false;
     protected Rank rank;
 
     
@@ -28,20 +29,21 @@ public abstract class Entity implements Wear
     }
     
     protected void levelup(){
-        level=level++;
+        level=level+1;
         fullHP();
     }
     
     protected void setHP(double diff){
-        health=health-1;
-        if(health==0){
-            isDead();
+        health -= diff;
+        if(health <= 0){
+            dead = true;
         }
     }
     
-    protected int getDamage(double def, double opRank){
-        int damage = (int)(1+(((((2*level)/5)+2)*rank.getAttackPower()*(attack/def))/50))
-        *(int)opRank*(int)rank.getRank();
+    protected double getDamage(double def, double opRank){
+        double damage;
+        damage = (1+(((((2*level)/5)+2)*rank.getAttackPower()*(attack/def))/50))
+        *opRank*rank.getRank();
         return damage;
     }
     
@@ -63,7 +65,7 @@ public abstract class Entity implements Wear
     }
     
     protected boolean isDead(){
-        return true;
+        return dead;
     }
    
     protected void setRank(Rank rank){
@@ -83,8 +85,8 @@ public abstract class Entity implements Wear
     }
     
     public void setWeapon(String name, double dmg){
-        this.name=name;
-        this.weaponDmg=dmg;
+        weapon = name;
+        weaponDmg = dmg;
         setPower();
     }
     
@@ -93,7 +95,9 @@ public abstract class Entity implements Wear
     }
     
     public void setArmor(String name, double def){
-        
+        armor = name;
+        armorDef = def;
+        setPower();
     }
     
     public String getArmor(){
@@ -108,11 +112,7 @@ public abstract class Entity implements Wear
         return armorDef;
     }
     
-    protected void fullHP(){
-        
-    }
+    protected abstract void fullHP();
     
-    protected void quote(){
-        
-    }
+    protected abstract void quote();
 }

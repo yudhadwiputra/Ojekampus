@@ -1,3 +1,4 @@
+package modul6;
 /**
  * Write a description of class Tank here.
  * 
@@ -12,12 +13,13 @@ public class Tank implements Rank
 
     public Tank(String name, int power)
     {
-       
+       this.attackName = name;
+       this.attackPower = power;      
     }
    
     public void setAttackName(String name)
     {
-        // put your code here
+       attackName = name;
     }
     
     public String getAttackerName()
@@ -27,7 +29,7 @@ public class Tank implements Rank
     
     public void setAttackPower(int power)
     {
-        
+        attackPower = power;
     }
     
     public int getAttackPower()

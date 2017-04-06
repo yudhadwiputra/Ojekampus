@@ -1,3 +1,4 @@
+package modul6;
 /**
  * Write a description of interface Rank here.
  * 

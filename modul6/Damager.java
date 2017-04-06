@@ -1,3 +1,4 @@
+package modul6;
 /**
  * Write a description of class Damager here.
  * 
@@ -12,12 +13,13 @@ public class Damager implements Rank
     
     public Damager(String name, int power)
     {
-       
+        this.attackName = name;
+        this.attackPower = power;
     }
    
     public void setAttackName(String name)
     {
-        // put your code here
+        attackName = name;
     }
     
     public String getAttackerName()
@@ -27,7 +29,7 @@ public class Damager implements Rank
     
     public void setAttackPower(int power)
     {
-        
+        attackPower = power;
     }
     
     public int getAttackPower()

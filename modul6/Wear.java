@@ -1,3 +1,4 @@
+package modul6;
 import java.lang.*;
 /**
  * Write a description of interface Wear here.
