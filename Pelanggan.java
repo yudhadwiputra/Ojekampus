@@ -9,25 +9,20 @@ import java.util.GregorianCalendar;
  * @author (Yudha Dwi Putra) 
  * @version (04/03/2017)
  */
-public class Pelanggan
+public class Pelanggan extends User
 {
     // instance variables - replace the example below with your own
-    private int id;
-    private String nama,telefon,email;
-    private Date dob;
-    
     /**
      * Constructor Pelanggan. 
      * Metode yang pertama kali dipanggil ketika sebuah object dari kelas pelanggan diciptakan.
-     * @param int id pelanggan untuk object pelanggan baru.
-     * @param String nama pelanggan untuk object pelanggan baru.
+     * @param int id    id pelanggan untuk object pelanggan baru.
+     * @param String nama   nama pelanggan untuk object pelanggan baru.
      */
-    public Pelanggan(int id, String nama, String telefon)
+    public Pelanggan(int id, String nama, String telefon) 
     {
         // initialise instance variables
-        this.id = id;
-        this.nama = nama;
-        this.setTelefon(telefon);
+        super(id,nama);
+        setTelefon(telefon);
     }
     
     /**
@@ -42,86 +37,4 @@ public class Pelanggan
         return "Pelanggan" + " Nama : "+ nama + " Id : "+ id + "No.Tlp : " + telefon + " Pelanggan Awal :" + temp.getPenggunaAwal() + "||";
     } 
     
-    /**
-     * getID. 
-     * Metode yang akan mengembalikan nilai id pelanggan ketika dipanggil.
-     * @return int id   nilai id pelanggan.
-     */    
-    public int getID()
-    {
-        return id;
-    }
-    
-    public String getTelefon(){
-        return telefon;
-    }
-    
-    public String getEmail(){
-        return email;
-    }
-    
-    public Date getDOB(){
-        return dob;
-    }
-    
-    /**
-     * getNama. 
-     * Metode yang akan mengembalikan nama pelanggan ketika dipanggil.
-     * @return String nama  nama pelanggan.
-     */
-    public String getNama(){
-        return nama;
-    }
-    
-    /**
-     * setID. 
-     * Metode untuk merubah nilai id pelanggan.
-     * @param int id   nilai id baru pelanggan.
-     */
-    public void setID(int id){
-        this.id = id;
-    }
-    
-    /**
-     * setNama. 
-     * Metode untuk merubah nama pelanggan.
-     * @param String nama   nama baru pelanggan.
-     */
-    public void setNama(String nama){
-        this.nama = nama;
-    }
-  
-    
-    public void setDOB(Date dob){
-        this.dob = dob;
-    }
-   
-    public boolean setTelefon(String telefon){
-        Pattern pattern = Pattern.compile("\\d{10,12}");
-        Matcher matcher = pattern.matcher(telefon);
-        if(matcher.matches())
-        {
-            this.telefon = telefon;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-    public boolean setEmail(String email){
-        Pattern pattern = Pattern.compile("(.)+(@)(.)+\\.(.)+");
-        Matcher matcher = pattern.matcher(email);
-        this.email=email;
-        if(matcher.matches())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
 }

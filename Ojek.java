@@ -11,18 +11,14 @@ import java.util.GregorianCalendar;
  * @author (Yudha Dwi Putra) 
  * @version (04/03/2017)
  */
-public class Ojek
+public class Ojek extends User
 {
     // instance variables - replace the example below with your own
     private StatusOjek status = StatusOjek.Idle;
     private Lokasi posisiSekarang;
     private Pesanan pesanan_sekarang=null;
     private int id;
-    private String nama;
-    private String telefon;
-    private String email;
     private String no_plat;
-    private Date dob;
 
     /**
      * Constructor Ojek. 
@@ -34,8 +30,7 @@ public class Ojek
     public Ojek(int id, String nama, Lokasi posisiSekarang)
     {
         // initialise instance variables
-        this.id = id;
-        this.nama = nama;
+        super(id,nama);
         this.posisiSekarang = posisiSekarang;
     }
     
@@ -51,52 +46,6 @@ public class Ojek
         return "Ojek" + " Id : "+id + " Nama : "+  nama + " Status :" + status.getIDStatus() + " Pelanggan" + temp.getNama()+ "||";
     }
     
-    /**
-     * setID. 
-     * Metode untuk merubah nilai id ojek.
-     * @param int id   nilai id baru ojek.
-     */
-    public void setID(int id){
-        this.id = id;
-    }
-    
-    /**
-     * setNama. 
-     * Metode untuk merubah nama ojek.
-     * @param String nama   nama baru ojek.
-     */
-    public void setNama(String nama){
-        this.nama = nama;
-    }
-    
-    public boolean setTelefon(String telefon){
-        Pattern pattern = Pattern.compile("\\d{10,12}");
-        Matcher matcher = pattern.matcher(telefon);
-        if(matcher.matches())
-        {
-            this.telefon = telefon;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-    public boolean setEmail(String email){
-        Pattern pattern = Pattern.compile("(.)+(@)(.)+\\.(.)+");
-        Matcher matcher = pattern.matcher(email);
-        this.email=email;
-        if(matcher.matches())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
     public boolean setNoPlat(String no_plat){
         Pattern pattern = Pattern.compile("[A-Z]\\d{1,4}[A-Z]{1,3}");
         Matcher matcher = pattern.matcher(no_plat);
@@ -109,10 +58,6 @@ public class Ojek
         {
             return false;
         }
-    }
-    
-    public void setDOB(int day, int month, int year){
-        dob = new GregorianCalendar (year, month, day).getTime();
     }
     
     /**
@@ -142,39 +87,11 @@ public class Ojek
         this.status = status;
     }
     
-    /**
-     * getID. 
-     * Metode yang akan mengembalikan nilai id ojek ketika dipanggil.
-     * @return int id nilai id ojek.
-     */  
-    public int getID(){
-        return id;
-    }
-    
-    /**
-     * getNama. 
-     * Metode yang akan mengembalikan nama ojek ketika dipanggil.
-     * @return String nama   nama ojek.
-     */  
-    public String getNama(){
-        return nama;
-    }
-    
-    public String getTelefon(){
-        return telefon;
-    }
-    
-    public String getEmail(){
-        return email;
-    }
-    
     public String getNoPlat(){
         return no_plat;
     }
     
-    public Date getDOB(){
-        return dob;
-    }
+
     
     /**
      * getPesanan. 
