@@ -15,7 +15,7 @@ public class PesananSudahAdaException extends Exception
         this.pesanan_error=pesanan_input;
     }
 
-    public String GetMessage()
+    public String getMessage()
     {
         return super.getMessage() + pesanan_error.getPelanggan().getNama() + " sudah melakukan pemesanan dengan tipe layanan " + pesanan_error.getTipeLayanan();
     }

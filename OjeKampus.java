@@ -60,17 +60,32 @@ public class OjeKampus
         Lokasi lokasi_awal_pesanan1 = new Lokasi("Margonda",12,34,"Depok");
         Lokasi lokasi_akhir_pesanan1 = new Lokasi("Juanda",12,45,"Depok");
         Pesanan pesanan1 = new Pesanan(pelanggan1,TipeLayanan.BeliBarang,lokasi_awal_pesanan1,lokasi_akhir_pesanan1,pelanggan1.getNama());
-        DatabasePesanan.addPesanan(pesanan1);
+        try{
+            DatabasePesanan.addPesanan(pesanan1);
+        }
+        catch(PesananSudahAdaException error){
+            System.out.println(error.getMessage());
+        }
         
         Lokasi lokasi_awal_pesanan2 = new Lokasi("Fatmawati",23,45,"Jakarta Selatan");
         Lokasi lokasi_akhir_pesanan2 = new Lokasi("Pancoran",23,67,"Jakarta Selatan");
         Pesanan pesanan2 = new Pesanan(pelanggan2,TipeLayanan.AntarBarang,lokasi_awal_pesanan2,lokasi_akhir_pesanan2,pelanggan2.getNama(), "Irfan");
-        DatabasePesanan.addPesanan(pesanan2);
-        
+        try{
+            DatabasePesanan.addPesanan(pesanan2);
+        }
+        catch(PesananSudahAdaException error){
+            System.out.println(error.getMessage());
+        }
+
         Lokasi lokasi_awal_pesanan3 = new Lokasi("Tanjung Priok",34,56,"Jakarta Utara");
         Lokasi lokasi_akhir_pesanan3 = new Lokasi("Mangga dua",34,78,"Jakarta Barat");
         Pesanan pesanan3 = new Pesanan(pelanggan3,TipeLayanan.AntarOrang,lokasi_awal_pesanan3,lokasi_akhir_pesanan3,pelanggan3.getNama());
-        DatabasePesanan.addPesanan(pesanan3);
+        try{
+            DatabasePesanan.addPesanan(pesanan3);
+        }
+        catch(PesananSudahAdaException error){
+            System.out.println(error.getMessage());
+        }
         
         Administrasi.printAllDatabase();
         Administrasi.jalankanSistemPenugas();
@@ -83,14 +98,30 @@ public class OjeKampus
         Administrasi.pesananDibatalkan(pesanan2.getPelayan());
         pesanan3.getPelayan().setStatus(StatusOjek.Antar);
         System.out.println("\n");
-        DatabasePesanan.hapusPesanan(pesanan1.getPelanggan());
-        DatabasePesanan.hapusPesanan(pesanan2.getPelanggan());
+        try{
+            DatabasePesanan.hapusPesanan(pelanggan1);
+        }
+        catch(PesananOlehPelangganDitemukanException error){
+            System.out.println(error.getMessage());
+        }
+        
+        try{
+            DatabasePesanan.hapusPesanan(pelanggan2);
+        }
+        catch(PesananOlehPelangganDitemukanException error){
+            System.out.println(error.getMessage());
+        }
         Administrasi.printAllDatabase();
         
         Administrasi.pesananSelesai(pesanan3.getPelanggan());
         System.out.println("\n");
         Administrasi.printAllDatabase();
-        DatabasePesanan.hapusPesanan(pesanan3.getPelanggan());
+        try{
+            DatabasePesanan.hapusPesanan(pelanggan3);
+        }
+        catch(PesananOlehPelangganDitemukanException error){
+            System.out.println(error.getMessage());
+        }
         
         System.out.println("\n");
         Administrasi.printAllDatabase();

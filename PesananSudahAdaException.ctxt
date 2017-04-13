@@ -2,5 +2,5 @@
 comment0.params=pesanan_input
 comment0.target=PesananSudahAdaException(Pesanan)
 comment1.params=
-comment1.target=java.lang.String\ GetMessage()
+comment1.target=java.lang.String\ getMessage()
 numComments=2
