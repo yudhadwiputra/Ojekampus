@@ -42,19 +42,19 @@ public class OjeKampus
         //Modul 5 Tugas 4
         System.out.println("\n");
         Lokasi lokasi_ojek1 = new Lokasi("Ciputat",04,12,"Tangerang");
-        Ojek ojek1 = new Ojek(1,"Yudha", lokasi_ojek1);
+        Ojek ojek1 = new Ojek(DatabaseUser.getIDOjekTerakhir(),"Yudha", lokasi_ojek1);
         DatabaseUser.addOjek(ojek1);
         Lokasi lokasi_ojek2 = new Lokasi("Pasar Minggu",56,78,"Jakarta Selatan");
-        Ojek ojek2 = new Ojek(2,"Irfan", lokasi_ojek2);
+        Ojek ojek2 = new Ojek(DatabaseUser.getIDOjekTerakhir(),"Irfan", lokasi_ojek2);
         DatabaseUser.addOjek(ojek2);
         Lokasi lokasi_ojek3 = new Lokasi("Cijantung",67,89,"Jakarta Timur");
-        Ojek ojek3 = new Ojek(3,"Yunus", lokasi_ojek3);
+        Ojek ojek3 = new Ojek(DatabaseUser.getIDOjekTerakhir(),"Yunus", lokasi_ojek3);
         DatabaseUser.addOjek(ojek3);
-        Pelanggan pelanggan1 = new Pelanggan(1, "Destian","081234567890");
+        Pelanggan pelanggan1 = new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Destian","081234567890");
         DatabaseUser.addPelanggan(pelanggan1);
-        Pelanggan pelanggan2 = new Pelanggan(2, "Yuda","089876543210");
+        Pelanggan pelanggan2 = new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Yuda","089876543210");
         DatabaseUser.addPelanggan(pelanggan2);
-        Pelanggan pelanggan3 = new Pelanggan(3, "Aulya","082345678901");
+        Pelanggan pelanggan3 = new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Aulya","082345678901");
         DatabaseUser.addPelanggan(pelanggan3);
         
         Lokasi lokasi_awal_pesanan1 = new Lokasi("Margonda",12,34,"Depok");
