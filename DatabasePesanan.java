@@ -63,16 +63,16 @@ public class DatabasePesanan
             throw new PesananTidakDitemukanException(pesan);
         }
         list_pesanan.remove(pesan);
-        return true;
+        return true;       
     }
    
     public static boolean hapusPesanan(Pelanggan pengguna) throws PesananOlehPelangganDitemukanException
     {
         Pesanan pesan = getPesanan(pengguna);
         if(pesan.getPelayan()== null){
-            list_pesanan.remove(pesan);
-            return true;
+            throw new PesananOlehPelangganDitemukanException(pengguna);
         }
-        throw new PesananOlehPelangganDitemukanException(pengguna);
+        list_pesanan.remove(pesan);
+        return true;
     }
 }

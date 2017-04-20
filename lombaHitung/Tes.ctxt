@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=
+comment1.target=int\ random()
+comment2.params=arr
+comment2.target=int[]\ sorting(int[])
+numComments=3

@@ -76,6 +76,12 @@ public class OjeKampus
         catch(PesananSudahAdaException error){
             System.out.println(error.getMessage());
         }
+                try{
+            DatabasePesanan.addPesanan(pesanan2);
+        }
+        catch(PesananSudahAdaException error){
+            System.out.println(error.getMessage());
+        }
 
         Lokasi lokasi_awal_pesanan3 = new Lokasi("Tanjung Priok",34,56,"Jakarta Utara");
         Lokasi lokasi_akhir_pesanan3 = new Lokasi("Mangga dua",34,78,"Jakarta Barat");
