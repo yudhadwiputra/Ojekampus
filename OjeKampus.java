@@ -22,6 +22,21 @@ public class OjeKampus
    public static Pesanan pesanan_putra;
    private TipeLayanan layanan;
    
+   public static SistemPengawas sistem;
+    
+   public static void StartSistemPengawas(int waktu_cek){
+        SistemPengawas cek = new SistemPengawas("Thread1", waktu_cek);
+        cek.start();
+   }
+    
+   public static void MenungguSistem(int a){
+        try{
+            Thread.sleep(a);
+        }catch(InterruptedException error1){
+            System.out.println("Sistem tidak dapat menunggu !");
+        }
+   }
+   
      /* Multi line comment
      * Constructor Ojekampus
      * Constructor ini tidak perlu diberikan apapun, karena class ini tidak memerlukan apapun ketika
@@ -93,10 +108,15 @@ public class OjeKampus
             System.out.println(error.getMessage());
         }
         
+        StartSistemPengawas(100);
+        
         Administrasi.printAllDatabase();
-        Administrasi.jalankanSistemPenugas();
-        Administrasi.jalankanSistemPenugas();
-        Administrasi.jalankanSistemPenugas();
+        //Administrasi.jalankanSistemPenugas();
+        //Administrasi.jalankanSistemPenugas();
+        //Administrasi.jalankanSistemPenugas();
+        MenungguSistem(100);
+        MenungguSistem(100);
+        MenungguSistem(100);
         System.out.println("\n");
         Administrasi.printAllDatabase();
         

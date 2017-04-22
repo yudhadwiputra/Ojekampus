@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ start()
+comment1.params=
+comment1.target=void\ run()
+comment2.params=
+comment2.target=void\ join()
+comment3.params=
+comment3.target=void\ exit()
+comment4.params=ThreadName\ waktu_cek
+comment4.target=SistemPengawas(java.lang.String,\ int)
+numComments=5
