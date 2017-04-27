@@ -91,12 +91,6 @@ public class OjeKampus
         catch(PesananSudahAdaException error){
             System.out.println(error.getMessage());
         }
-                try{
-            DatabasePesanan.addPesanan(pesanan2);
-        }
-        catch(PesananSudahAdaException error){
-            System.out.println(error.getMessage());
-        }
 
         Lokasi lokasi_awal_pesanan3 = new Lokasi("Tanjung Priok",34,56,"Jakarta Utara");
         Lokasi lokasi_akhir_pesanan3 = new Lokasi("Mangga dua",34,78,"Jakarta Barat");
@@ -111,12 +105,9 @@ public class OjeKampus
         StartSistemPengawas(100);
         
         Administrasi.printAllDatabase();
-        //Administrasi.jalankanSistemPenugas();
-        //Administrasi.jalankanSistemPenugas();
-        //Administrasi.jalankanSistemPenugas();
-        MenungguSistem(100);
-        MenungguSistem(100);
-        MenungguSistem(100);
+
+        MenungguSistem(300);
+
         System.out.println("\n");
         Administrasi.printAllDatabase();
         
@@ -151,5 +142,36 @@ public class OjeKampus
         
         System.out.println("\n");
         Administrasi.printAllDatabase();
+    }
+    
+    public static void antarBarang(){
+        
+    }
+    public static void antarOrang(){
+        
+    }
+    public static void ojekMembatalkan(){
+        
+    }
+    public static void ojekMengubahStatus(){
+        
+    }
+    public static void pembelianBarang(){
+        
+    }
+    public static void penggunaMembatalkan(){
+        
+    }
+    public static void penggunaMenghapusPesanan(){
+        
+    }
+    public static void penggunaMenyelesaikanPesanan(){
+        
+    }
+    public static void registrasiOjek(){
+        
+    }
+    public static void registrasiPengguna(){
+        
     }
 }
