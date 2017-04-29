@@ -1,215 +1,326 @@
-import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseAdapter;
+import javax.swing.*;
+
 /**
- * Write a description of class PesananGUI here.
+ * Write a description of class WelcomeGUI here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yudha Dwi Putra
+ * @version 29 April 2017
  */
-public class PesananGUI extends JFrame
-{
-    private JMenuBar menuBar;
-    private JButton button1;
-    private JButton button2;
-    private JComboBox combobox1;
-    private JLabel label1;
-    private JLabel label2;
-    private JLabel label3;
-    private JLabel label4;
-    private JLabel label5;
-    private JLabel label6;
-    private JLabel label7;
-    private JLabel label8;
-    private JTextField textfield1;
-    private JTextField textfield10;
-    private JTextField textfield11;
-    private JTextField textfield12;
-    private JTextField textfield2;
-    private JTextField textfield3;
-    private JTextField textfield4;
-    private JTextField textfield5;
-    private JTextField textfield6;
-    private JTextField textfield7;
-    private JTextField textfield8;
-    private JTextField textfield9;
 
-    public PesananGUI(){
-        this.setTitle("Pemesanan Customer GUI");
-        this.setSize(500,400);
-        this.setJMenuBar(menuBar);
-
+public class PesananGUI extends JFrame {
+    private JButton enter;
+    private JButton pesan;
+    private JLabel biaya;
+    private JLabel id;
+    private JLabel labelPesanan; 
+    private JLabel labelLokasiAkhir;
+    private JLabel labelLokasiAwal; 
+    private JLabel labelNamaAkhir; 
+    private JLabel labelNamaAwal; 
+    private JLabel tipeLayanan;
+    private JTextField ID; 
+    private JTextField x_awal;
+    private JTextField y_awal; 
+    private JTextField x_akhir;
+    private JTextField y_akhir;
+    private JTextField lokasiAwal; 
+    private JTextField lokasiAkhir;
+    private JTextField keteranganAwal;
+    private JTextField keteranganAkhir;
+    private JTextField namaAwal;
+    private JTextField namaAkhir;
+    private JTextField Biaya;
+    private JComboBox pilihTipeLayanan;
+    
+    public PesananGUI()
+    {
+        this.setTitle("Pesanan GUI");
+        this.setSize(497,428);
+       
         JPanel contentPane = new JPanel(null);
-        contentPane.setPreferredSize(new Dimension(500,400));
-        contentPane.setBackground(new Color(192,192,192));
+        contentPane.setPreferredSize(new Dimension(497,428));
 
-        button1 = new JButton();
-        button1.setBounds(378,49,90,35);
-        button1.setEnabled(true);
-        button1.setText("Enter");
-        button1.setVisible(true);
+        labelPesanan = new JLabel();
+        labelPesanan.setBounds(43,8,430,76);
+        labelPesanan.setEnabled(true);
+        labelPesanan.setText("PEMESANAN CUSTOMER");
+        labelPesanan.setVisible(true);
+        
+        biaya = new JLabel();
+        biaya.setBounds(18,322,90,35);
+        biaya.setEnabled(true);
+        biaya.setText("Biaya");
+        biaya.setVisible(true);
 
-        button2 = new JButton();
-        button2.setBounds(395,328,90,35);
-        button2.setEnabled(true);
-        button2.setText("Pesan");
-        button2.setVisible(true);
+        enter = new JButton();
+        enter.setBounds(387,68,90,35);
+        enter.setEnabled(true);
+        enter.setText("Enter");
+        enter.setVisible(true);
+        enter.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent klik)
+            {
+                DatabaseUser.getUserPelanggan(Integer.parseInt(ID.getText()));
+            }
+        });
 
-        combobox1 = new JComboBox();
-        combobox1.setBounds(130,90,90,35);
-        combobox1.setEnabled(true);
-        combobox1.setVisible(true);
+        id = new JLabel();
+        id.setBounds(20,68,120,35);
+        id.setEnabled(true);
+        id.setText("ID                    :");
+        id.setVisible(true);
 
-        label1 = new JLabel();
-        label1.setBounds(170,8,150,35);
-        label1.setEnabled(true);
-        label1.setText("Pemesanan Customer");
-        label1.setVisible(true);
+        ID = new JTextField();
+        ID.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                ID.setText("");
+            }
+        });
+        ID.setBounds(125,68,250,35);
+        ID.setEnabled(true);
+        ID.setText("ID");
+        ID.setVisible(true);
 
-        label2 = new JLabel();
-        label2.setBounds(30,57,90,35);
-        label2.setEnabled(true);
-        label2.setText("ID");
-        label2.setVisible(true);
+        tipeLayanan = new JLabel();
+        tipeLayanan.setBounds(20,110,120,35);
+        tipeLayanan.setEnabled(true);
+        tipeLayanan.setText("Tipe Layanan   :");
+        tipeLayanan.setVisible(true);
+        
+        JComboBox<TipeLayanan> pilihTipeLayanan = new JComboBox<>();
+        pilihTipeLayanan.setModel(new DefaultComboBoxModel<>(TipeLayanan.values()));
+        pilihTipeLayanan.setBounds(125,110,250,35);
+        pilihTipeLayanan.setEnabled(true);
+        pilihTipeLayanan.setVisible(true);
+        
+        labelLokasiAkhir = new JLabel();
+        labelLokasiAkhir.setBounds(20,194,120,35);
+        labelLokasiAkhir.setEnabled(true);
+        labelLokasiAkhir.setText("Lokasi akhir     :");
+        labelLokasiAkhir.setVisible(true);
 
-        label3 = new JLabel();
-        label3.setBounds(30,91,90,35);
-        label3.setEnabled(true);
-        label3.setText("Tipe Layanan");
-        label3.setVisible(true);
+        labelLokasiAwal = new JLabel();
+        labelLokasiAwal.setBounds(20,151,120,35);
+        labelLokasiAwal.setEnabled(true);
+        labelLokasiAwal.setText("Lokasi awal");
+        labelLokasiAwal.setVisible(true);
 
-        label4 = new JLabel();
-        label4.setBounds(30,122,90,35);
-        label4.setEnabled(true);
-        label4.setText("Lokasi Awal");
-        label4.setVisible(true);
+        labelNamaAkhir = new JLabel();
+        labelNamaAkhir.setBounds(20,278,120,35);
+        labelNamaAkhir.setEnabled(true);
+        labelNamaAkhir.setText("NP Akhir");
+        labelNamaAkhir.setVisible(true);
 
-        label5 = new JLabel();
-        label5.setEnabled(true);
-        label5.setText("Lokasi Akhir");
-        label5.setVisible(true);
+        labelNamaAwal = new JLabel();
+        labelNamaAwal.setBounds(20,236,120,35);
+        labelNamaAwal.setEnabled(true);
+        labelNamaAwal.setText("NP Awal");
+        labelNamaAwal.setVisible(true);
 
-        label6 = new JLabel();
-        label6.setBounds(30,209,90,35);
-        label6.setEnabled(true);
-        label6.setText("NP Awal");
-        label6.setVisible(true);
-
-        label7 = new JLabel();
-        label7.setBounds(30,270,90,35);
-        label7.setEnabled(true);
-        label7.setText("NP AKhir");
-        label7.setVisible(true);
-
-        label8 = new JLabel();
-        label8.setBounds(30,300,90,35);
-        label8.setEnabled(true);
-        label8.setText("Biaya");
-        label8.setVisible(true);
-
-        textfield1 = new JTextField();
-        textfield1.setBounds(130,54,90,35);
-        textfield1.setEnabled(true);
-        textfield1.setText("id");
-        textfield1.setVisible(true);
-
-        textfield10 = new JTextField();
-        textfield10.setBounds(130,217,90,35);
-        textfield10.setEnabled(true);
-        textfield10.setText("Nama Pengguna Awal");
-        textfield10.setVisible(true);
-
-        textfield11 = new JTextField();
-        textfield11.setBounds(130,254,90,35);
-        textfield11.setEnabled(true);
-        textfield11.setText("Nama Pengguna Akhir");
-        textfield11.setVisible(true);
-
-        textfield12 = new JTextField();
-        textfield12.setBounds(130,289,90,35);
-        textfield12.setEnabled(true);
-        textfield12.setText("Biaya");
-        textfield12.setVisible(true);
-
-        textfield2 = new JTextField();
-        textfield2.setBounds(130,129,90,35);
-        textfield2.setEnabled(true);
-        textfield2.setText("x");
-        textfield2.setVisible(true);
-
-        textfield3 = new JTextField();
-        textfield3.setBounds(220,129,90,35);
-        textfield3.setEnabled(true);
-        textfield3.setText("y");
-        textfield3.setVisible(true);
-
-        textfield4 = new JTextField();
-        textfield4.setBounds(315,129,90,35);
-        textfield4.setEnabled(true);
-        textfield4.setText("Nama Lokasi");
-        textfield4.setVisible(true);
-
-        textfield5 = new JTextField();
-        textfield5.setBounds(405,129,90,35);
-        textfield5.setEnabled(true);
-        textfield5.setText("Keterangan");
-        textfield5.setVisible(true);
-
-        textfield6 = new JTextField();
-        textfield6.setBounds(130,165,90,35);
-        textfield6.setEnabled(true);
-        textfield6.setText("x");
-        textfield6.setVisible(true);
-
-        textfield7 = new JTextField();
-        textfield7.setBounds(220,165,90,35);
-        textfield7.setEnabled(true);
-        textfield7.setText("y");
-        textfield7.setVisible(true);
-
-        textfield8 = new JTextField();
-        textfield8.setBounds(315,165,90,35);
-        textfield8.setEnabled(true);
-        textfield8.setText("Nama Lokasi");
-        textfield8.setVisible(true);
-
-        textfield9 = new JTextField();
-        textfield9.setBounds(405,165,90,35);
-        textfield9.setEnabled(true);
-        textfield9.setText("Keterangan");
-        textfield9.setVisible(true);
-
-        contentPane.add(button1);
-        contentPane.add(button2);
-        contentPane.add(combobox1);
-        contentPane.add(label1);
-        contentPane.add(label2);
-        contentPane.add(label3);
-        contentPane.add(label4);
-        contentPane.add(label5);
-        contentPane.add(label6);
-        contentPane.add(label7);
-        contentPane.add(label8);
-        contentPane.add(textfield1);
-        contentPane.add(textfield10);
-        contentPane.add(textfield11);
-        contentPane.add(textfield12);
-        contentPane.add(textfield2);
-        contentPane.add(textfield3);
-        contentPane.add(textfield4);
-        contentPane.add(textfield5);
-        contentPane.add(textfield6);
-        contentPane.add(textfield7);
-        contentPane.add(textfield8);
-        contentPane.add(textfield9);
+        x_awal = new JTextField();
+        x_awal.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                x_awal.setText("");
+            }
+        });
+        x_awal.setBounds(125,151,50,35);
+        x_awal.setEnabled(true);
+        x_awal.setText("x");
+        x_awal.setVisible(true);
+        
+        y_awal = new JTextField();
+        y_awal.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                y_awal.setText("");
+            }
+        });
+        y_awal.setBounds(180,151,50,35);
+        y_awal.setEnabled(true);
+        y_awal.setText("y");
+        y_awal.setVisible(true);
+        
+        lokasiAwal = new JTextField();
+        lokasiAwal.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                lokasiAwal.setText("");
+            }
+        });
+        lokasiAwal.setBounds(235,151,140,35);
+        lokasiAwal.setEnabled(true);
+        lokasiAwal.setText("Nama Lokasi");
+        lokasiAwal.setVisible(true);
+        
+        keteranganAwal = new JTextField();
+        keteranganAwal.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                keteranganAwal.setText("");
+            }
+        });
+        keteranganAwal.setBounds(380,151,90,35);
+        keteranganAwal.setEnabled(true);
+        keteranganAwal.setText("Keterangan");
+        keteranganAwal.setVisible(true);
+        
+        x_akhir = new JTextField();
+        x_akhir.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                x_akhir.setText("");
+            }
+        });
+        x_akhir.setBounds(125,194,50,35);
+        x_akhir.setEnabled(true);
+        x_akhir.setText("x");
+        x_akhir.setVisible(true);
+        
+        y_akhir = new JTextField();
+        y_akhir.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                y_akhir.setText("");
+            }
+        });
+        y_akhir.setBounds(180,194,50,35);
+        y_akhir.setEnabled(true);
+        y_akhir.setText("y");
+        y_akhir.setVisible(true);
+        
+        lokasiAkhir = new JTextField();
+        lokasiAkhir.setBounds(235,194,140,35);
+        lokasiAkhir.setEnabled(true);
+        lokasiAkhir.setText("Nama Lokasi");
+        lokasiAkhir.setVisible(true);
+        
+        keteranganAkhir = new JTextField();
+        keteranganAkhir.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                keteranganAkhir.setText("");
+            }
+        });
+        keteranganAkhir.setBounds(380,194,90,35);
+        keteranganAkhir.setEnabled(true);
+        keteranganAkhir.setText("Keterangan");
+        keteranganAkhir.setVisible(true);
+         
+        namaAwal = new JTextField();
+        namaAwal.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                namaAwal.setText("");
+            }
+        });
+        namaAwal.setBounds(125, 236, 250, 35);
+        namaAwal.setEnabled(true);
+        namaAwal.setText("Nama Pengguna Awal");
+        namaAwal.setVisible(true);
+        
+        namaAkhir = new JTextField();
+        namaAkhir.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                namaAkhir.setText("");
+            }
+        });
+        namaAkhir.setBounds(125, 278, 250, 35);
+        namaAkhir.setEnabled(true);
+        namaAkhir.setText("Nama Pengguna Akhir");
+        namaAkhir.setVisible(true);
+        
+        Biaya = new JTextField();
+        Biaya.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                Biaya.setText("");
+            }
+        });
+        Biaya.setBounds(125, 320, 250, 35);
+        Biaya.setEnabled(true);
+        Biaya.setText("Biaya");
+        Biaya.setVisible(true);
+        
+        pesan = new JButton();
+        pesan.setBounds(380,362,90,35);
+        pesan.setEnabled(true);
+        pesan.setText("Pesan");
+        pesan.setVisible(true);
+        pesan.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent klik)
+            {
+                try
+                {
+                    DatabasePesanan.addPesanan(
+                    new Pesanan(DatabaseUser.getUserPelanggan(Integer.parseInt(ID.getText())), (TipeLayanan)pilihTipeLayanan.getSelectedItem(), 
+                    new Lokasi(lokasiAwal.getText(), Integer.parseInt(x_awal.getText()), Integer.parseInt(y_awal.getText()), keteranganAwal.getText()), 
+                    new Lokasi(lokasiAkhir.getText(),Integer.parseInt(x_akhir.getText()), Integer.parseInt(y_akhir.getText()), keteranganAkhir.getText()), 
+                    namaAwal.getText(), namaAkhir.getText(), Integer.parseInt(Biaya.getText())));
+                    Administrasi.printPesananDatabase();
+                    Administrasi.jalankanSistemPenugas();
+                }
+                catch(PesananSudahAdaException e)
+                {
+                    System.out.println(e.getMessage());
+                }
+            }
+        });
+        
+        contentPane.add(biaya);
+        contentPane.add(enter);
+        contentPane.add(id);
+        contentPane.add(ID);
+        contentPane.add(labelPesanan);
+        contentPane.add(labelLokasiAkhir);
+        contentPane.add(labelLokasiAwal);
+        contentPane.add(labelNamaAkhir);
+        contentPane.add(labelNamaAwal);
+        contentPane.add(pilihTipeLayanan);
+        contentPane.add(x_awal);
+        contentPane.add(y_awal);
+        contentPane.add(lokasiAwal);
+        contentPane.add(keteranganAwal);
+        contentPane.add(x_akhir);
+        contentPane.add(y_akhir);
+        contentPane.add(lokasiAkhir);
+        contentPane.add(keteranganAkhir);
+        contentPane.add(namaAwal);
+        contentPane.add(namaAkhir);
+        contentPane.add(Biaya);        
+        contentPane.add(tipeLayanan);
+        contentPane.add(pesan);
 
         this.add(contentPane);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.pack();
         this.setVisible(true);
     }
-    
-    public static void main(String args[]) {
-        new PesananGUI();
-    }
+
+     public static void main(String[] args)
+     {
+         new PesananGUI();   
+     }
+
 }

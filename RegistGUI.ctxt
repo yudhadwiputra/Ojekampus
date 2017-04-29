@@ -1,6 +1,16 @@
 #BlueJ class context
 comment0.params=
 comment0.target=RegistGUI()
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment1.params=e
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=e
+comment2.target=void\ mouseClicked(java.awt.event.MouseEvent)
+comment3.params=e
+comment3.target=void\ mouseClicked(java.awt.event.MouseEvent)
+comment4.params=e
+comment4.target=void\ mouseClicked(java.awt.event.MouseEvent)
+comment5.params=e
+comment5.target=void\ mouseClicked(java.awt.event.MouseEvent)
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7

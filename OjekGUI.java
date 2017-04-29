@@ -1,33 +1,81 @@
+import javax.swing.UIManager.LookAndFeelInfo;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+import javax.swing.*;
 
 /**
- * Write a description of class OjekGUI here.
+ * Write a description of class WelcomeGUI here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yudha
+ * @version 29 April 2017
  */
-public class OjekGUI
+
+public class OjekGUI extends JFrame
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class OjekGUI
-     */
-    public OjekGUI()
+    private JButton buttonloginojek;
+    private JButton buttonregojek;
+    private JLabel labelojek;
+    
+    public OjekGUI() 
     {
-        // initialise instance variables
-        x = 0;
+        this.setTitle("Ojek GUI");
+        this.setSize(500,400);
+
+        JPanel contentPane = new JPanel(null);
+        contentPane.setPreferredSize(new Dimension(500,400));
+
+        buttonloginojek = new JButton();
+        buttonloginojek.setBounds(188,208,120,55);
+        buttonloginojek.setEnabled(true);
+        buttonloginojek.setText("Login");
+        buttonloginojek.setVisible(true);
+        buttonloginojek.addMouseListener(new MouseAdapter() 
+        {
+            public void mouseClicked(MouseEvent klik) 
+            {
+                new OjekLoginGUI();
+            }
+        });
+        
+        buttonregojek = new JButton();
+        buttonregojek.setBounds(188,149,120,55);
+        buttonregojek.setEnabled(true);
+        buttonregojek.setText("Registrasi");
+        buttonregojek.setVisible(true);
+        buttonregojek.addMouseListener(new MouseAdapter() 
+        {
+            public void mouseClicked(MouseEvent klik) 
+            {
+                new RegistOjekGUI();
+            }
+        });
+
+        labelojek = new JLabel();
+        labelojek.setBounds(183,40,194,80);
+        labelojek.setEnabled(true);
+        labelojek.setText("OJEK");
+        labelojek.setVisible(true);
+        
+        contentPane.add(buttonloginojek);
+        contentPane.add(buttonregojek);
+        contentPane.add(labelojek);
+
+        this.add(contentPane);
+        this.setLocationRelativeTo(null);
+        this.pack();
+        this.setVisible(true);
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    
+    
+    public static void main(String[] args)
     {
-        // put your code here
-        return x + y;
+        new OjekGUI();
     }
 }

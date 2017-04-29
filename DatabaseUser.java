@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class DatabaseUser
 {   
-    private static ArrayList<User>  user_database = new ArrayList<User>();
+    public static ArrayList<User> user_database = new ArrayList<User>();
     private static int id_ojek_terakhir = 1;
     private static int id_pelanggan_terakhir = 1;
     
