@@ -2,7 +2,11 @@
 comment0.params=id\ nama\ telefon
 comment0.target=Pelanggan(int,\ java.lang.String,\ java.lang.String)
 comment0.text=\r\n\ Constructor\ Pelanggan.\ \r\n\ Metode\ yang\ pertama\ kali\ dipanggil\ ketika\ sebuah\ object\ dari\ kelas\ pelanggan\ diciptakan.\r\n\ @param\ int\ id\ \ \ \ id\ pelanggan\ untuk\ object\ pelanggan\ baru.\r\n\ @param\ String\ nama\ \ \ nama\ pelanggan\ untuk\ object\ pelanggan\ baru.\r\n
-comment1.params=
-comment1.target=java.lang.String\ toString()
-comment1.text=\r\n\ printData.\ \r\n\ Metode\ untuk\ mencetak\ data\ pelanggan.\r\n
-numComments=2
+comment1.params=id\ nama\ telefon\ email
+comment1.target=Pelanggan(int,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=id\ nama\ telefon\ email\ dob
+comment2.target=Pelanggan(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.Date)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment3.text=\r\n\ printData.\ \r\n\ Metode\ untuk\ mencetak\ data\ pelanggan.\r\n
+numComments=4

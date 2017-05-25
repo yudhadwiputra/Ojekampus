@@ -70,9 +70,11 @@ public class DatabasePesanan
     {
         Pesanan pesan = getPesanan(pengguna);
         if(pesan.getPelayan()== null){
-            throw new PesananOlehPelangganDitemukanException(pengguna);
+            list_pesanan.remove(pesan);
+            System.out.println("Pesanan berhasil dihapus");
+            return true;
         }
-        list_pesanan.remove(pesan);
-        return true;
+
+        throw new PesananOlehPelangganDitemukanException(pengguna);
     }
 }

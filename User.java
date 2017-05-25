@@ -14,16 +14,7 @@ public abstract class User
     protected int id;
     protected String nama,telefon,email;
     protected Date dob;
-    /**
-     * Constructor for objects of class User
-     */
-    public User(int id, String nama)
-    {
-        // initialise instance variables
-       this.id = id;
-       this.nama = nama;
-    }
-    
+
         /**
      * getID. 
      * Metode yang akan mengembalikan nilai id pelanggan ketika dipanggil.

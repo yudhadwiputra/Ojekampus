@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=mainGUI()
+comment1.params=klik
+comment1.target=void\ mouseClicked(java.awt.event.MouseEvent)
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=we
+comment3.target=void\ windowClosing(java.awt.event.WindowEvent)
+comment4.params=klik
+comment4.target=void\ mouseClicked(java.awt.event.MouseEvent)
+comment5.params=klik
+comment5.target=void\ mouseClicked(java.awt.event.MouseEvent)
+comment6.params=
+comment6.target=void\ jam_mulai()
+comment7.params=
+comment7.target=void\ generateMenu()
+comment8.params=args
+comment8.target=void\ main(java.lang.String[])
+numComments=9

@@ -15,6 +15,11 @@ public class DatabaseUser
     private static int id_ojek_terakhir = 1;
     private static int id_pelanggan_terakhir = 1;
     
+    public DatabaseUser()
+    {
+        //Belum ada isi yang dibutuhkan
+    }
+    
     public static ArrayList<Ojek> getOjekDatabase(){
         ArrayList<Ojek>  ojek_database = new ArrayList<Ojek>();
        

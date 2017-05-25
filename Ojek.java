@@ -17,7 +17,6 @@ public class Ojek extends User
     private StatusOjek status = StatusOjek.Idle;
     private Lokasi posisiSekarang;
     private Pesanan pesanan_sekarang=null;
-    private int id;
     private String no_plat;
 
     /**
@@ -30,20 +29,35 @@ public class Ojek extends User
     public Ojek(int id, String nama, Lokasi posisiSekarang)
     {
         // initialise instance variables
-        super(id,nama);
+        super.id=id;
+        super.nama=nama;
+        this.posisiSekarang = posisiSekarang;
+    }
+
+    public Ojek(int id, String nama, String telefon, String email, Date date, String no_plat, Lokasi posisiSekarang)
+    {
+        super.id = id;
+        super.nama = nama;
+        super.telefon = telefon;
+        super.email = email;
+        super.dob = date;
+        this.no_plat = no_plat;
         this.posisiSekarang = posisiSekarang;
     }
     
     /**
-     * printData. 
-     * Metode untuk mencetak data ojek.
-     */ 
+     * Method untuk menampilkan data pada kelas Ojek
+     */
     public String toString(){
-        if(pesanan_sekarang == null){
-        return "Ojek" + " Id : "+id + " Nama : "+  nama + " Status :" + status.getIDStatus()+ "||";
+    if(pesanan_sekarang == null)
+    {
+        return "\nOjek" + " Id: "+id + " Nama: "+ nama + " Status:" + status.toString();
     }
+    else
+    {
         Pelanggan temp = pesanan_sekarang.getPelanggan();
-        return "Ojek" + " Id : "+id + " Nama : "+  nama + " Status :" + status.getIDStatus() + " Pelanggan" + temp.getNama()+ "||";
+        return "\nOjek" + " Id: "+id + " Nama: "+ nama + " Status:" + status.toString() + " Pelanggan:" + temp.getNama();
+    }
     }
     
     public boolean setNoPlat(String no_plat){
@@ -98,7 +112,8 @@ public class Ojek extends User
      * Metode yang akan mengembalikan pesanan yang diambil ojek ketika dipanggil.
      * @return Pesanan pesanan_sekarang   pesanan yang diambil ojek.
      */  
-    public Pesanan getPesanan(){
+    public Pesanan getPesanan()
+    {
         return pesanan_sekarang;
     }
     

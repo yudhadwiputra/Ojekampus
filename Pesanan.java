@@ -99,6 +99,18 @@ public class Pesanan
         " status " + final_status + " || Diproses oleh " +
         pelayan.getNama());
     }
+        
+    public String getFinalStatus(){
+        String final_status = "KOSONG";
+        if(getStatusDiproses() == true && getStatusSelesai() == false){
+            final_status = "DIPROSES";
+        } else if(getStatusDiproses() == false && getStatusSelesai() == false){
+            final_status = "KOSONG";
+        } else if(getStatusDiproses() == false && getStatusSelesai() == true){
+            final_status = "SELESAI";
+        }
+        return final_status;
+    }
     
     /**
      * getStatusPesanan. 

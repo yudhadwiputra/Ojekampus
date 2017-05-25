@@ -18,11 +18,27 @@ public class Pelanggan extends User
      * @param int id    id pelanggan untuk object pelanggan baru.
      * @param String nama   nama pelanggan untuk object pelanggan baru.
      */
-    public Pelanggan(int id, String nama, String telefon) 
+    public Pelanggan(int id, String nama, String telefon)
     {
-        // initialise instance variables
-        super(id,nama);
-        setTelefon(telefon);
+        super.id=id;
+        super.nama=nama;
+        this.setTelefon(telefon);
+    }
+    
+    public Pelanggan(int id, String nama, String telefon, String email)
+    {
+        super.id = id;
+        super.nama = nama;
+        super.telefon = telefon;
+        super.email = email;
+    }
+    
+    public Pelanggan(int id, String nama, String telefon, String email, Date dob)
+    {
+        super.nama = nama;
+        super.telefon = telefon;
+        super.email = email;
+        super.dob = dob;
     }
     
     /**
